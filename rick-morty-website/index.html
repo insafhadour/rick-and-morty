@@ -3,11 +3,116 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>rick-morty-website</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app" class="multiverse-container">
+      <div id="loading-screen" class="loading-screen">
+      <div class="portal-spin">
+        <i class="fas fa-circle-notch fa-spin"></i>
+        <span>Opening portal ...</span>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
+
+    <header class="portal-header">
+      <div class="header-content">
+        <h1 class="portal-title">
+          <i class="fas fa-portal-enter"></i>
+          Multiverse Explorer
+        </h1>
+        <div class="controls">
+          <button id="theme-toggle" class="theme-btn" title="Toggle Theme">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button id="survival-kit-btn" class="survival-kit-btn" title="Survival Kit">
+            <i class="fas fa-heart"></i>
+            <span id="favorites-count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+  <section class="control-panel">
+    <div class="search-container">
+      <div class="portal-gun-search">
+        <i class="fas fa-search"></i>
+        <input type="text" id="search-input" placeholder="Portal Gun Search ... (name, species, status)">
+      </div>
+    </div>
+
+  <div class="filters">
+    <select id="status-filters">
+      <option value="">All Status</option>
+      <option value="Alive">🟢 Alive</option>
+      <option value="Dead">🔴 Dead</option>
+      <option value="unknown">❓ Unknown</option>
+    </select>
+  
+    <select id="species-filter">
+      <option value=""> All Species</option>
+      <option value="Human">👤 Human</option>
+      <option value="Alien">👽 Alien</option>
+      <option value="Robot">🤖 Robot</option>
+    </select>
+
+    <select id="species-filter">
+      <option value="">All Gender</option>
+      <option value="Male">♂️ Male</option>
+      <option value="Female">♀️ Female</option>
+      <option value="Unknown">❓Unknown</option>
+    </select>
+  </div>
+
+  <div class="sort-controls">
+    <select id="sort-select">
+      <option value="name">Name ↕️</option>
+      <option value="status">Status ↕️</option>
+      <option value="species">Species ↕️</option>
+    </select>
+  <button id="clear-filters" class="clear-btn">
+    <i class="fas fa-times"></i> Clear
+  </button>
+  </div>
+  </section>
+
+
+  <section class="stats-grid">
+    <div class="stat-card">
+      <i class="fas fa-users"></i>
+      <span id="total-characters">-</span> Characters
+    </div>
+  <div class="stat-card Alive"> 
+    <i class="fas fa-heartbeat"></i>
+    <span id="Alive-count">-</span> Alive
+  </div>
+  <div class="stat-card Dead">
+    <i class="fas fa-skull"></i>
+    <span id="dead-count">-</span> Dead
+  </div>
+  </section>
+
+
+  <main id="characters-grid" class="characters-grid">
+  </main>
+
+  <div id="survival-kit-modal" class="modal">
+    <div class="modal-content">
+      <h2><i class="fas fa-briefcase"></i> Survival Kit</h2>
+      <button id="close-modal" class="close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div id="favorites-list" class="favorites-list">
+      <p>No favorites yet. Scan some characters !</p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initApp }  from './js/main/js';
+    initApp();
+  </script>
   </body>
 </html>

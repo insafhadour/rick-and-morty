@@ -2,26 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rick-morty-website</title>
+    <title>Rick and Morty Explorer</title>
+    <link rel="stylesheet" href="src/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
   <body>
-    <div id="app" class="multiverse-container">
-      <div id="loading-screen" class="loading-screen">
+
+    <div id="loading-screen" class="loading-screen"></div>
       <div class="portal-spin">
         <i class="fas fa-circle-notch fa-spin"></i>
         <span>Opening portal ...</span>
       </div>
     </div>
-    <script type="module" src="/src/main.js"></script>
+   
 
     <header class="portal-header">
       <div class="header-content">
         <h1 class="portal-title">
-          <i class="fas fa-portal-enter"></i>
-          Multiverse Explorer
+          <i class="fas fa-meteor"></i>
+          Rick and Morty
         </h1>
         <div class="controls">
           <button id="theme-toggle" class="theme-btn" title="Toggle Theme">
@@ -35,12 +35,10 @@
       </div>
     </header>
 
-  <section class="control-panel">
-    <div class="search-container">
+  <section class="controls-panel">
       <div class="portal-gun-search">
         <i class="fas fa-search"></i>
         <input type="text" id="search-input" placeholder="Portal Gun Search ... (name, species, status)">
-      </div>
     </div>
 
   <div class="filters">
@@ -58,7 +56,7 @@
       <option value="Robot">🤖 Robot</option>
     </select>
 
-    <select id="species-filter">
+    <select id="gender-filter">
       <option value="">All Gender</option>
       <option value="Male">♂️ Male</option>
       <option value="Female">♀️ Female</option>
@@ -68,9 +66,9 @@
 
   <div class="sort-controls">
     <select id="sort-select">
-      <option value="name">Name ↕️</option>
-      <option value="status">Status ↕️</option>
-      <option value="species">Species ↕️</option>
+      <option value="name">Name </option>
+      <option value="status">Status </option>
+      <option value="species">Species </option>
     </select>
   <button id="clear-filters" class="clear-btn">
     <i class="fas fa-times"></i> Clear
@@ -84,32 +82,35 @@
       <i class="fas fa-users"></i>
       <span id="total-characters">-</span> Characters
     </div>
-  <div class="stat-card Alive"> 
+  <div class="stat-card alive"> 
     <i class="fas fa-heartbeat"></i>
-    <span id="Alive-count">-</span> Alive
+    <span id="alive-count">-</span> Alive
   </div>
-  <div class="stat-card Dead">
+  <div class="stat-card dead">
     <i class="fas fa-skull"></i>
     <span id="dead-count">-</span> Dead
   </div>
   </section>
 
 
-  <main id="characters-grid" class="characters-grid">
-  </main>
+  <main id="characters-grid" class="characters-grid"></main>
 
   <div id="survival-kit-modal" class="modal">
-    <div class="modal-content">
+    <div class="modal-content" class="modal"></div>
+      <div class="modal-header">
       <h2><i class="fas fa-briefcase"></i> Survival Kit</h2>
       <button id="close-modal" class="close-btn">
         <i class="fas fa-times"></i>
       </button>
     </div>
-    <div id="favorites-list" class="favorites-list">
-      <p>No favorites yet. Scan some characters !</p>
+    <div id="favorites-list" class="favorites-list"> 
+      <p>No favorites yet. Scan some characters!</p>
+    </div>
     </div>
   </div>
 
- 
+  <div id="detail-modal" class="modal"></div>
+
+ <script type="module" src="/src/main.js"></script>
   </body>
 </html>

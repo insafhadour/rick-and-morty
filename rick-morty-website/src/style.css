@@ -10,11 +10,10 @@
   --dark: #1a1a2e;
   --darker: #16213e;
   --light: #e0e6ed;
-  --portal-glow: 0 0 20px #004dff;
   --portal-glow: 0 0 15px #4ade80;
 }
 
-[data-theme="dark"] {
+[data-theme] {
   --dark: #f8fafc;
   --darker: #e2e8f0;
   --light: #1e293b;
@@ -140,6 +139,11 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
+.filters select option {
+  background: #0f0f1a;
+  color: #e0e6ed;
+}
+
 .filters {
   display: flex;
   gap: 1rem;
@@ -170,10 +174,21 @@ body {
   align-items: center;
 }
 
+.clear-btn {
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--secondary);
+  border-radius: 25px;
+  background: transparent;
+  color: var(--light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
 .clear-btn:hover {
   background: var(--secondary);
   color: white;
-  transform: translate(-2px);
+  transform: translateX(-2px);
 }
 
 .stats-grid {
@@ -208,6 +223,10 @@ body {
 
 .stat-card.dead {
   border-color: #ef4444;
+}
+
+.stat-card.alive {
+  border-color: #4ade80;
 }
 
 .characters-grid {
@@ -337,7 +356,7 @@ body {
   to { opacity: 1;}
 }
 
-.modal.content {
+.modal-content {
   background: var(--dark);
   max-width: 600px;
   width: 90%;

@@ -3,10 +3,6 @@ import './style.css';
 const API ='https://rickandmortyapi.com/api/character';
 const loadingScreen = document.getElementById('loading-screen');
 
-window.addEventListener('load', () => {
-    loadingScreen.style.display = 'none';
-});
-
 let chars = [];
 let favorites = JSON.parse(localStorage.getItem('favs')) || [];
 

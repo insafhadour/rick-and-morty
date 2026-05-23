@@ -164,12 +164,22 @@ window.closeDetail = closeDetail;
 document.addEventListener('DOMContentLoaded', () => {
     el('search-input').addEventListener('input', (e) => { 
     const val = e.target.value.toLowerCase();
-    const results = chars.filter(c =>
-        c.name.toLowerCase().includes(val) ||
-        c.species.toLowerCase().includes(val) ||
-        c.status.toLowerCase().includes(val)
-    );
-    render(results);
+    const errorMsg = el('search-error');
+    if (val.length === 1) {
+        el('search-input').style.borderColor = '#ff6b6b';
+        errorMsg.style.display = 'block';
+    } else {
+        el('search-input').style.borderColor = '';
+        errorMsg.style.display = 'none';
+    }
+    if (val.length === 0 || val.length >= 2) {
+        const results = chars.filter(c =>
+            c.name.toLowerCase().includes(val) ||
+            c.species.toLowerCase().includes(val) ||
+            c.status.toLowerCase().includes(val)
+        );
+        render(results);
+    }
 });
 
 

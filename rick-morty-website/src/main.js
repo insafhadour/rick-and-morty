@@ -135,12 +135,12 @@ function openDetail(id) {
     const statusClass = `status-${c.status.toLowerCase()}`;
     
     document.getElementById('detail-modal').innerHTML = `
-    <div class="modal-content>
+    <div class="modal-content">
     <button class="close-btn" onclick="closeDetail()">
     <i class="fas fa-times"></i>
     </button>
     <img src="${c.image}" alt="${c.name}" style="width:100%;border-radius:15px;margin-bottom:1rem">
-    <h2 style="color:var(--primary);margin-bottom:1rem">${c.name}</span>
+    <h2 style="color:var(--primary);margin-bottom:1rem">${c.name}</h2>
     <div class="character-details">
     <span class="status-badge ${statusClass}">${c.status}</span>
     <span>${c.species}</span>
@@ -176,6 +176,17 @@ document.addEventListener('DOMContentLoaded', () => {
 ['status-filters', 'species-filter', 'gender-filter', 'sort-select'].forEach(id => {
     el(id).addEventListener('change', applyFilters);
 });
+
+el('alive-count').closest('.stat-card').addEventListener('click', () => {
+    el('status-filters').value = 'Alive';
+    applyFilters();
+});
+
+el('dead-count').closest('.stat-card').addEventListener('click', () => {
+    el('stat-filters').value = 'Dead';
+    applyFilters();
+});
+
 
 el('clear-filters').addEventListener('click', () => {
     el('status-filters').value ='';

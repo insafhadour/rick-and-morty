@@ -12,13 +12,21 @@ function el(id) {
 
 async function load() {
     try {
-        const res = await fetch(API);
-        const data = await res.json();
+        const [res1, res2, res3] = await Promise.all ([
+            fetch(`${API}?page=1`),
+            fetch(`${API}?page=2`),
+            fetch(`${API}?page=3`)
+        ]);
 
-        chars = data.results;
+        const [data1, data2, data3] = await Promise.all ([
+            res1.json(),
+            res2.json(),
+            res3.json()
+        ]);
+
+        chars = [...data1.results, ...data2.results, ...data3.results];
 
         render(chars);
-
         updateStats();
 
     } catch (err) {
@@ -42,7 +50,7 @@ function render(list) {
     return `
     <div class="character-card" onclick="openDetail(${c.id})">
     <img class="character-image" src="${c.image}" alt="${c.name}">
-    <button class="favorite-btn ${isFav ? 'active' : ''}" onclick="event.stopPropagation(); "toggleFav(${c.id})">
+    <button class="favorite-btn ${isFav ? 'active' : ''}" onclick="event.stopPropagation(); toggleFav(${c.id})">
         <i class="fas fa-star"></i>
      </button>   
      <div class="character-info">
@@ -65,15 +73,6 @@ function render(list) {
         el('dead-count').textContent = dead;
     }
 
-el('search-input').addEventListener('input', (e) => {
-    const val = e.target.value.toLowerCase();
-    const results = chars.filter(c =>
-        c.name.toLowerCase().includes(val) || 
-        c.species.toLowerCase().includes(val) ||
-        c.status.toLowerCase().includes(val)
-    );
-    render(results);
-});
 
 function applyFilters() {
     const status = el('status-filters').value;

@@ -10,6 +10,7 @@ function el(id) {
     return document.getElementById(id);
 }
 
+//data ophalen van de API
 async function load() {
     try {
         const [res1, res2, res3] = await Promise.all ([
@@ -37,6 +38,7 @@ async function load() {
     }
 }
 
+//characters weergeven als kaarten
 function render(list) {
    if (list.length === 0) {
     el('characters-grid').innerHTML = 
@@ -95,6 +97,7 @@ function applyFilters() {
     render(results);
 }
 
+//favorieten opslaan in LocalStorage
 function toggleFav(id) {
     const index = favorites.indexOf(id);
     if (index !== -1) {
@@ -193,10 +196,14 @@ el('alive-count').closest('.stat-card').addEventListener('click', () => {
 });
 
 el('dead-count').closest('.stat-card').addEventListener('click', () => {
-    el('stat-filters').value = 'Dead';
+    el('status-filters').value = 'Dead';
     applyFilters();
 });
 
+el('total-characters').parentElement.addEventListener('click', () => {
+    el('status-filters').value ='';
+    applyFilters();
+});
 
 el('clear-filters').addEventListener('click', () => {
     el('status-filters').value ='';

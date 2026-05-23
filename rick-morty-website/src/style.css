@@ -27,6 +27,7 @@ body {
   transition: all 0.3s ease;
 }
 
+/*loading screen animatie */
 .loading-screen {
   position: fixed;
   top: 0;
@@ -230,6 +231,7 @@ body {
   border-color: #4ade80;
 }
 
+/* characters kaarten grid*/
 .characters-grid {
   max-width: 1200px;
   margin: 2rem auto;
@@ -293,6 +295,7 @@ body {
   font-weight: 600;
 }
 
+/* status badges kleuren*/
 .status-alive {
   background: rgba(74, 222, 128, 0.2);
   color: #4ade80;
@@ -478,6 +481,7 @@ body {
   justify-content: center;
 }
 
+/* responsive design voor mobiel*/
 @media (max-width: 768px) {
   .portal-title {
     font-size: 1.5rem;

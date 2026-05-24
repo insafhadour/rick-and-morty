@@ -63,6 +63,26 @@ function render(list) {
    }).join('');
 
    el('characters-grid').innerHTML = html;
+   observeCards();
+}
+
+// observer API : animatie voor kaarten als ze in beeld komen
+function observeCards() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity ='1';
+                entry.target.style.transform ='translateY(0)';
+
+                observer.unobserve(entry.target);
+            }
+        });
+    },{ threshold: 0.1 });
+
+    document.querySelectorAll('.character-card').forEach(card => {
+        observer.observe(card);
+    });
+
 }
 
 

@@ -1,17 +1,22 @@
 # Rick and Morty Explorer
 
 ## Projectbeschrijving :
-Een webapplicatie waar je Rick and Morty characters kan bekijken, filteren, sorteren en opslaan als favoriet.
+Rick and Morty Multiverse Explorer is een webapplicatie gebouwd met JavaScript en Vite. De applicatie maakt gebruik van de Rick and Morty API om personages uit de serie op te halen en weer te geven. 
+Gebruikers kunnen personages zoeken, filteren en sorteren op verschillende eigenschappen zoals status, soort en geslacht. Daarnaast kunnen favoriete personages opgeslagen worden via LocalStorage zodat deze behouden blijven tussen verschillende sessies.
 
 ## Functionaliteiten : 
-- 60 characters bekijken
-- Op een character klikken voor meer details
+- Meer dan 60 Rick and Morty characters bekijken via de API
+- Op een character klikken om extra details te bekijken
 - Zoeken op naam, soort of status
 - Filteren op status, soort en gender
 - Sorteren op naam, status of soort
-- Characters toevoegen aan je Survival Kit
+- Characters toevoegen aan een persoonlijke Survival Kit (favorieten)
+- Favorieten bewaren via LocalStorage
 - Wisselen tussen donker en licht thema
-- Alive/dead statistieken klikbaar
+- Klikbare statistieken voor alive/dead characters
+- Geanimeerde character cards via IntersectionObserver API
+- Responsive design voor desktop, tablet en mobiel
+- Gebruiksvriendelijke interface met interactieve elementen
 
 ## Gebruikte API'S : 
 - https://rickandmortyapi.com
@@ -44,7 +49,7 @@ Vereiste :                            | Implementatie:
 Vereiste :                            | Implementatie:
 - LocalStorage favorieten               `localStorage.setItem('favs')` : main.js regel 100
 - LocalStorage thema                    `localStorage.setItem('theme')` : main.js regel 178
-- Form validatie                         melding bij 1 karakter : main.js regel 134
+- Form validatie                         melding bij 1 karakter zoeken : main.js regel 134
 
 ## Styling & Layout :
 Vereiste :                            | Implementatie:
@@ -63,9 +68,11 @@ Vereiste :                            | Implementatie:
   npm run dev
 
 ## Screenshots :
-![Homepage](public/Schermafbeelding%202026-05-25%20012124.png12124.png)
-![Detail modal](public/Schermafbeelding%20%202.png)
+![Startpagina](public/Schermafbeelding%202026-05-25%20012124.png)
 ![Night mode](public/Schermafbeelding%202026-05-25%20013447.png)
+![Character](public/Schermafbeelding%202026-05-25%20031921.png)
+
+
 
 ## Gebruikte bronnen : 
 - Rick and Morty API: https://rickandmortyapi.com

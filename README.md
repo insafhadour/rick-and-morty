@@ -1,0 +1,80 @@
+# Rick and Morty Explorer
+
+## Projectbeschrijving :
+Een webapplicatie waar je Rick and Morty characters kan bekijken, filteren, sorteren en opslaan als favoriet.
+
+## Functionaliteiten : 
+- 60 characters bekijken
+- Op een character klikken voor meer details
+- Zoeken op naam, soort of status
+- Filteren op status, soort en gender
+- Sorteren op naam, status of soort
+- Characters toevoegen aan je Survival Kit
+- Wisselen tussen donker en licht thema
+- Alive/dead statistieken klikbaar
+
+## Gebruikte API'S : 
+- https://rickandmortyapi.com
+- https://rickandmortyapi.com/api/character
+
+## DOM Manipulatie : 
+Vereiste :                            | Implementatie:
+- Elementen selecteren                  `el()` functie : main.js regel 14
+- Elementen manipuleren                 `innerHTML` kaarten : main.js regel 57
+- Events koppelen                       `addEventListener` : main.js regel 
+
+## JavaScript Concepten :
+Vereiste :                            | Implementatie:
+- Constanten                            `const API` : main.js regel 3
+- Template literals                      HTML kaarten genereren : main.js regel 46
+- Iteratie over arrays                   `.forEach()` filters :  main.js regel 148
+- Array methodes                         `.filter()` `.map()` `.sort()` : main.js regel 80
+- Arrow functions                         overal gebruikt : main.js regel 44
+- Ternaire operator                      `isFav ? 'active' : ''` : main.js regel 44
+- Callback functions                      event listeners : main.js regel 131
+- Async & Await                           `async function load()` : main.js regel 16
+- Observer API                            `IntersectionObserver` kaarten : main.js regel 63
+
+## Data & API :
+Vereiste :                            | Implementatie:
+- Fetch                                 `fetch(API)` : main.js regel 18
+- JSON                                  `res.json()` : main.js regel 23
+
+## Opslag & Validatie :
+Vereiste :                            | Implementatie:
+- LocalStorage favorieten               `localStorage.setItem('favs')` : main.js regel 100
+- LocalStorage thema                    `localStorage.setItem('theme')` : main.js regel 178
+- Form validatie                         melding bij 1 karakter : main.js regel 134
+
+## Styling & Layout :
+Vereiste :                            | Implementatie:
+- CSS Grid                              characters grid - style.css
+- Flexbox                               header en filters - style.css
+- Animaties                             hover en fade-in - style.css
+- Responsive                            media queries - style.css
+- Icoontjes                             Font Awesome - index.html
+
+## Installatiehandeling : 
+ - Clone de repository :
+ git clone https://github.com/insafhadour/rick-and-morty
+- Ga naar de map :
+ cd rick-and-morty
+- Start :
+  npm run dev
+
+## Screenshots :
+![Homepage](public/Schermafbeelding%202026-05-25%20012124.png12124.png)
+![Detail modal](public/Schermafbeelding%20%202.png)
+![Night mode](public/Schermafbeelding%202026-05-25%20013447.png)
+
+## Gebruikte bronnen : 
+- Rick and Morty API: https://rickandmortyapi.com
+- Font Awesome: https://fontawesome.com
+- Vite: https://vitejs.dev
+- AI chatlog : Claude voor : - debugging van JavaScript fouten - hulp bij de implementatie van filters - hulp bij de IntersectionObserver API - structuur en organisatie van de code - verbetering van CSS animaties
+
+
+
+
+
+  
